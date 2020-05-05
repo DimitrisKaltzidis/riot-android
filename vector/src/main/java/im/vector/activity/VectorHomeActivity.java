@@ -1803,7 +1803,7 @@ public class VectorHomeActivity extends VectorAppCompatActivity implements Searc
                         break;
                     }
 
-                    case R.id.sliding_copyright_terms: {
+           /*         case R.id.sliding_copyright_terms: {
                         VectorUtils.displayAppCopyright();
                         break;
                     }
@@ -1822,7 +1822,7 @@ public class VectorHomeActivity extends VectorAppCompatActivity implements Searc
                         VectorUtils.displayThirdPartyLicenses();
                         break;
                     }
-
+*/
                     case R.id.sliding_menu_debug: {
                         // This menu item is only displayed in debug build
                         startActivity(new Intent(VectorHomeActivity.this, DebugMenuActivity.class));
