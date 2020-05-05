@@ -102,6 +102,8 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import GreetingsGenerator.GeneratedPhraseResult;
+import GreetingsGenerator.Generator;
 import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
@@ -201,6 +203,7 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
     private static final int MEDIA_SOURCE_STICKER = 3;
     private static final int MEDIA_SOURCE_PHOTO = 4;
     private static final int MEDIA_SOURCE_VIDEO = 5;
+    private static final int MEDIA_SOURCE_PoutsoBanana = 6;
 
     private static final String CAMERA_VALUE_TITLE = "attachment"; // Samsung devices need a filepath to write to or else won't return a Uri (!!!)
     private String mLatestTakePictureCameraUri = null; // has to be String not Uri because of Serializable
@@ -3889,9 +3892,9 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
         items.add(DialogListItem.SendFile.INSTANCE);
 
         // Send voice
-        if (isVoiceFeatureEnabled) {
+        /*if (isVoiceFeatureEnabled) {*/
             items.add(DialogListItem.SendVoice.INSTANCE);
-        }
+//        }
 
         // Send sticker
         if (Matrix.getWidgetManager(this) != null) {
@@ -3905,6 +3908,8 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
         } else {
             items.add(DialogListItem.TakePhotoVideo.INSTANCE);
         }
+
+        items.add(DialogListItem.Poutsobanana.INSTANCE);
 
         new AlertDialog.Builder(this)
                 .setAdapter(new DialogSendItemAdapter(this, items), new DialogInterface.OnClickListener() {
@@ -3955,6 +3960,9 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
                         onSendChoiceClicked(DialogListItem.TakePhotoVideo.INSTANCE);
                         return;
                     }
+                case MEDIA_SOURCE_PoutsoBanana:
+                    onSendChoiceClicked(DialogListItem.Poutsobanana.INSTANCE);
+                    return;
             }
 
             chooseMediaSource(useNativeCamera, isVoiceFeatureEnabled);
@@ -3995,6 +4003,11 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
                     VectorRoomActivity.this, PermissionsToolsKt.PERMISSION_REQUEST_CODE_LAUNCH_NATIVE_VIDEO_CAMERA)) {
                 launchNativeVideoRecorder();
             }
+        } else if(dialogListItem instanceof DialogListItem.Poutsobanana){
+            Generator test = new Generator();
+            GeneratedPhraseResult result = test.compileMsg(test.generate());
+            mEditText.setText(result.getPhrase());
+            Toast.makeText(this,"Poutsobanana", Toast.LENGTH_LONG).show();
         }
     }
 
