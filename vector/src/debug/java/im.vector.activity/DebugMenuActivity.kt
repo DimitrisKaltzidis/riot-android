@@ -70,7 +70,7 @@ class DebugMenuActivity : VectorAppCompatActivity() {
                 .setContentText("Content")
                 // No effect because it's a group summary notif
                 .setNumber(33)
-                .setSmallIcon(R.drawable.logo_transparent)
+                .setSmallIcon(R.drawable.mesh_100)
                 // This provocate the badge issue: no badge for group notification
                 .setGroup("GroupKey")
                 .setGroupSummary(true)

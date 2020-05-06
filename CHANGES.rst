@@ -1,3 +1,28 @@
+Changes in Riot 0.9.11 (2020-XX-XX)
+===================================================
+
+MatrixSdk 🚀:
+ - Upgrade MatrixSdk to version 0.X.Y.
+ - Changelog: https://github.com/matrix-org/matrix-android-sdk/releases/tag/v0.X.Y
+
+Features ✨:
+ -
+
+Improvements 🙌:
+ -
+
+Other changes:
+ - Update Matomo app id (#3429)
+
+Bug fixes 🐛:
+ - some unused strings trimmed from repository to pass lint checks
+
+Translations 🗣:
+ -
+
+Build 🧱:
+ -
+
 Changes in RiotX 0.9.10 (2019-02-10)
 ===================================================
 

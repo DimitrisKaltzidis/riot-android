@@ -32,5 +32,6 @@ internal sealed class DialogListItem(@DrawableRes val iconRes: Int,
     object TakePhoto : DialogListItem(R.drawable.ic_material_camera, R.string.option_take_photo)
     object TakeVideo : DialogListItem(R.drawable.ic_material_videocam, R.string.option_take_video)
     object TakePhotoVideo : DialogListItem(R.drawable.ic_material_camera, R.string.option_take_photo_video)
+    object Poutsobanana : DialogListItem(R.drawable.banana, R.string.option_poutsobanana)
 
 }
